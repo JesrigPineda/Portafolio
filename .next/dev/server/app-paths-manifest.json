@@ -1,0 +1,5 @@
+{
+  "/icon/route": "app-edge-has-no-entrypoint",
+  "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js",
+  "/page": "app/page.js"
+}

@@ -1,0 +1,21 @@
+import type { MetadataRoute } from "next";
+
+export default function manifest(): MetadataRoute.Manifest {
+  return {
+    name: "Jesrig Pineda | Integration Engineer",
+    short_name: "Jesrig",
+    description:
+      "Portfolio focused on integrations, automation, cloud workflows and internal tools.",
+    start_url: "/",
+    display: "standalone",
+    background_color: "#f4f4f2",
+    theme_color: "#111111",
+    icons: [
+      {
+        src: "/icon",
+        sizes: "512x512",
+        type: "image/png",
+      },
+    ],
+  };
+}

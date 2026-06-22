@@ -1,0 +1,145 @@
+{
+  "version": 3,
+  "middleware": {},
+  "sortedMiddleware": [],
+  "functions": {
+    "/icon/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "required-server-files.js",
+        "server/server-reference-manifest.js",
+        "server/app/icon/route_client-reference-manifest.js",
+        "server/edge/chunks/_next-internal_server_app_icon_route_actions_0wqs5vs.js",
+        "server/edge/chunks/node_modules_next_dist_esm_1zb9k2t._.js",
+        "server/edge/chunks/[root-of-the-server]__1m9tpml._.js",
+        "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_1yocwnl._.js",
+        "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_073rsm7.js"
+      ],
+      "name": "app/icon/route",
+      "page": "/icon/route",
+      "entrypoint": "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_073rsm7.js",
+      "matchers": [
+        {
+          "regexp": "^/icon(?:/)?$",
+          "originalSource": "/icon"
+        }
+      ],
+      "wasm": [
+        {
+          "name": "wasm_10a187050363648b49a36c79d5266d2c",
+          "filePath": "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_yoga_0athij3.wasm"
+        },
+        {
+          "name": "wasm_151b7f7b511bd6dda63695d2c75c87a3",
+          "filePath": "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_resvg_0athij3.wasm"
+        }
+      ],
+      "assets": [
+        {
+          "name": "server/edge/assets/Geist-Regular.05-7db9wczy07.ttf",
+          "filePath": "server/edge/assets/Geist-Regular.05-7db9wczy07.ttf"
+        }
+      ],
+      "env": {
+        "__NEXT_BUILD_ID": "SkHWnTWMJHD0xTvBzdcY-",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "WcqvP1gq5WwXaL3JMAj65Kxc2O4axgZpuynWjXki3gg=",
+        "__NEXT_PREVIEW_MODE_ID": "1a44a2c0c82f9f577268872aea594323",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "c41727f36972cf8108b5a31b6baf0ecd58af8c63aa6d13f6286fa59e97dfa39b",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "7c58b493d62a3f856d588724adcd0f431837bc7a93c81371c7b112aad3ea6317"
+      }
+    },
+    "/opengraph-image/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "required-server-files.js",
+        "server/server-reference-manifest.js",
+        "server/app/opengraph-image/route_client-reference-manifest.js",
+        "server/edge/chunks/_next-internal_server_app_opengraph-image_route_actions_0as17aw.js",
+        "server/edge/chunks/_0-jp2u6._.js",
+        "server/edge/chunks/[root-of-the-server]__1m9tpml._.js",
+        "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_1yocwnl._.js",
+        "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_1y76wct.js"
+      ],
+      "name": "app/opengraph-image/route",
+      "page": "/opengraph-image/route",
+      "entrypoint": "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_1y76wct.js",
+      "matchers": [
+        {
+          "regexp": "^/opengraph-image(?:/)?$",
+          "originalSource": "/opengraph-image"
+        }
+      ],
+      "wasm": [
+        {
+          "name": "wasm_10a187050363648b49a36c79d5266d2c",
+          "filePath": "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_yoga_0athij3.wasm"
+        },
+        {
+          "name": "wasm_151b7f7b511bd6dda63695d2c75c87a3",
+          "filePath": "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_resvg_0athij3.wasm"
+        }
+      ],
+      "assets": [
+        {
+          "name": "server/edge/assets/Geist-Regular.05-7db9wczy07.ttf",
+          "filePath": "server/edge/assets/Geist-Regular.05-7db9wczy07.ttf"
+        }
+      ],
+      "env": {
+        "__NEXT_BUILD_ID": "SkHWnTWMJHD0xTvBzdcY-",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "WcqvP1gq5WwXaL3JMAj65Kxc2O4axgZpuynWjXki3gg=",
+        "__NEXT_PREVIEW_MODE_ID": "1a44a2c0c82f9f577268872aea594323",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "c41727f36972cf8108b5a31b6baf0ecd58af8c63aa6d13f6286fa59e97dfa39b",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "7c58b493d62a3f856d588724adcd0f431837bc7a93c81371c7b112aad3ea6317"
+      }
+    },
+    "/twitter-image/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "required-server-files.js",
+        "server/server-reference-manifest.js",
+        "server/app/twitter-image/route_client-reference-manifest.js",
+        "server/edge/chunks/_next-internal_server_app_twitter-image_route_actions_0yhla9h.js",
+        "server/edge/chunks/_1xqcq2z._.js",
+        "server/edge/chunks/[root-of-the-server]__1m9tpml._.js",
+        "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_1yocwnl._.js",
+        "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_16f1b5s.js"
+      ],
+      "name": "app/twitter-image/route",
+      "page": "/twitter-image/route",
+      "entrypoint": "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_16f1b5s.js",
+      "matchers": [
+        {
+          "regexp": "^/twitter-image(?:/)?$",
+          "originalSource": "/twitter-image"
+        }
+      ],
+      "wasm": [
+        {
+          "name": "wasm_10a187050363648b49a36c79d5266d2c",
+          "filePath": "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_yoga_0athij3.wasm"
+        },
+        {
+          "name": "wasm_151b7f7b511bd6dda63695d2c75c87a3",
+          "filePath": "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_resvg_0athij3.wasm"
+        }
+      ],
+      "assets": [
+        {
+          "name": "server/edge/assets/Geist-Regular.05-7db9wczy07.ttf",
+          "filePath": "server/edge/assets/Geist-Regular.05-7db9wczy07.ttf"
+        }
+      ],
+      "env": {
+        "__NEXT_BUILD_ID": "SkHWnTWMJHD0xTvBzdcY-",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "WcqvP1gq5WwXaL3JMAj65Kxc2O4axgZpuynWjXki3gg=",
+        "__NEXT_PREVIEW_MODE_ID": "1a44a2c0c82f9f577268872aea594323",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "c41727f36972cf8108b5a31b6baf0ecd58af8c63aa6d13f6286fa59e97dfa39b",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "7c58b493d62a3f856d588724adcd0f431837bc7a93c81371c7b112aad3ea6317"
+      }
+    }
+  }
+}

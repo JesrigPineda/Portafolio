@@ -1,0 +1,57 @@
+{
+  "sorted_middleware": [
+    "/icon/route"
+  ],
+  "middleware": {},
+  "instrumentation": null,
+  "functions": {
+    "/icon/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "server/server-reference-manifest.js",
+        "server/app/icon/route_client-reference-manifest.js",
+        "server/edge/chunks/_next-internal_server_app_icon_route_actions_0wqs5vs.js",
+        "server/edge/chunks/node_modules_next_dist_esm_0ud02me._.js",
+        "server/edge/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_08xzt0y._.js",
+        "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_1yocwnl._.js",
+        "server/edge/chunks/node_modules_next_dist_compiled_0zouyy5._.js",
+        "server/edge/chunks/node_modules_next_dist_0-g83ei._.js",
+        "server/edge/chunks/[root-of-the-server]__1jblaoq._.js",
+        "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_1ev6aw4.js"
+      ],
+      "name": "app/icon/route",
+      "page": "/icon/route",
+      "entrypoint": "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_1ev6aw4.js",
+      "matchers": [
+        {
+          "regexp": "^/icon(?:/)?$",
+          "originalSource": "/icon"
+        }
+      ],
+      "wasm": [
+        {
+          "name": "wasm_10a187050363648b49a36c79d5266d2c",
+          "filePath": "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_yoga_0athij3.wasm"
+        },
+        {
+          "name": "wasm_151b7f7b511bd6dda63695d2c75c87a3",
+          "filePath": "server/edge/chunks/node_modules_next_dist_compiled_@vercel_og_resvg_0athij3.wasm"
+        }
+      ],
+      "assets": [
+        {
+          "name": "server/edge/assets/Geist-Regular.05-7db9wczy07.ttf",
+          "filePath": "server/edge/assets/Geist-Regular.05-7db9wczy07.ttf"
+        }
+      ],
+      "env": {
+        "__NEXT_BUILD_ID": "development",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "Uh59lSsP4INLWHyPktW5K14uAK2zAJ48BNSStKGUWlw=",
+        "__NEXT_PREVIEW_MODE_ID": "27748734ba5e5db55cd5b62da4048ad3",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "734b6139ba2fd195b0fff88148d50928a00c2cbb277646c9b114080823927772",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "c549fde6aac66da4a2226e013f04e908fe834a3ba4677025a177eb46b0043f95"
+      }
+    }
+  }
+}
