@@ -6,7 +6,7 @@ export const professionalRoles = {
 } satisfies Record<Language, readonly string[]>;
 
 export const links = {
-  github: "https://github.com/jesrig",
+  github: "https://github.com/JesrigPineda",
   linkedin: "https://www.linkedin.com/in/jesrig",
   x: "https://x.com/JesrigPineda",
 };
