@@ -19,7 +19,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$og$2
 ;
 ;
 const runtime = "edge";
-const alt = "Jesrig Pineda - Integration Engineer";
+const alt = "Jesrig Pineda - Software and Integration Engineer";
 const size = {
     width: 1200,
     height: 630
@@ -59,7 +59,7 @@ function OpenGraphImage() {
                         style: {
                             color: "#707070"
                         },
-                        children: "Integration Engineer"
+                        children: "Software & Integration Engineer"
                     }, void 0, false, {
                         fileName: "[project]/src/app/opengraph-image.tsx",
                         lineNumber: 37,
@@ -81,7 +81,7 @@ function OpenGraphImage() {
                             fontWeight: 750,
                             maxWidth: 940
                         },
-                        children: "Integrations and automation for smoother operations."
+                        children: "Systems integration and automation for smoother operations."
                     }, void 0, false, {
                         fileName: "[project]/src/app/opengraph-image.tsx",
                         lineNumber: 41,
@@ -196,7 +196,7 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$opengraph$2d$image$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/opengraph-image.tsx [app-rsc] (ecmascript)");
 ;
 const runtime = "edge";
-const alt = "Jesrig Pineda - Integration Engineer";
+const alt = "Jesrig Pineda - Software and Integration Engineer";
 const size = {
     width: 1200,
     height: 630
@@ -228,7 +228,7 @@ async function __TURBOPACK__default__export__(props) {
         const data = {
             alt: imageMetadata.alt,
             type: imageMetadata.contentType || 'image/png',
-            url: imageUrl + (idParam ? '/' + idParam : '') + '?' + "c032de33e4f9488d"
+            url: imageUrl + (idParam ? '/' + idParam : '') + '?' + "345919019b2f5499"
         };
         const { size } = imageMetadata;
         if (size) {

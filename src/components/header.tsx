@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { navItems, siteContent, socialLinks } from "@/data/site";
+import { navItems, professionalRoles, siteContent, socialLinks } from "@/data/site";
 import { useLanguage } from "@/components/language-provider";
+import { RotatingRole } from "@/components/rotating-role";
 import jesrigAvatar from "@/img/Jesrig.jpg";
 
 function Avatar({ size = "md" }: { size?: "sm" | "md" }) {
@@ -131,7 +132,9 @@ export function Header() {
             <Avatar size="sm" />
             <span className="min-w-0">
               <span className="block truncate text-sm font-semibold text-primary">Jesrig</span>
-              <span className="block truncate text-xs text-tertiary">{copy.role}</span>
+              <span className="block truncate text-xs text-tertiary">
+                <RotatingRole roles={professionalRoles[language]} compact />
+              </span>
             </span>
           </a>
 
@@ -193,7 +196,9 @@ export function Header() {
             <Avatar />
             <span className="min-w-0">
               <span className="block truncate text-base font-semibold leading-tight text-primary">Jesrig</span>
-              <span className="block truncate text-xs font-medium text-tertiary">{copy.role}</span>
+              <span className="block truncate text-xs font-medium text-tertiary">
+                <RotatingRole roles={professionalRoles[language]} compact />
+              </span>
             </span>
           </a>
 

@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Jesrig Pineda - Integration Engineer";
+export const alt = "Jesrig Pineda - Software and Integration Engineer";
 export const size = {
   width: 1200,
   height: 630,
@@ -34,7 +34,7 @@ export default function OpenGraphImage() {
           }}
         >
           <span>Jesrig Pineda</span>
-          <span style={{ color: "#707070" }}>Integration Engineer</span>
+          <span style={{ color: "#707070" }}>Software &amp; Integration Engineer</span>
         </div>
 
         <div>
@@ -47,7 +47,7 @@ export default function OpenGraphImage() {
               maxWidth: 940,
             }}
           >
-            Integrations and automation for smoother operations.
+            Systems integration and automation for smoother operations.
           </div>
           <div
             style={{

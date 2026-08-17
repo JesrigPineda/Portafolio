@@ -1,7 +1,8 @@
 "use client";
 
-import { siteContent } from "@/data/site";
+import { professionalRoles, siteContent } from "@/data/site";
 import { useLanguage } from "@/components/language-provider";
+import { RotatingRole } from "@/components/rotating-role";
 
 export function Hero() {
   const { language } = useLanguage();
@@ -14,7 +15,7 @@ export function Hero() {
           {copy.title}
         </h1>
         <p className="mt-4 text-[clamp(1.45rem,7vw,2.25rem)] font-semibold leading-none text-tertiary sm:text-4xl">
-          {copy.role}
+          <RotatingRole roles={professionalRoles[language]} />
         </p>
 
         <p className="mt-10 max-w-3xl text-[clamp(1.85rem,8vw,3rem)] font-semibold leading-tight tracking-normal text-primary sm:mt-12 sm:text-5xl">

@@ -1,5 +1,10 @@
 export type Language = "es" | "en";
 
+export const professionalRoles = {
+  es: ["Software Engineer", "Integration Engineer", "Automation Engineer", "Full Stack Developer"],
+  en: ["Software Engineer", "Integration Engineer", "Automation Engineer", "Full Stack Developer"],
+} satisfies Record<Language, readonly string[]>;
+
 export const links = {
   github: "https://github.com/jesrig",
   linkedin: "https://www.linkedin.com/in/jesrig",
@@ -36,26 +41,24 @@ export const navItems = {
 export const siteContent = {
   es: {
     header: {
-      role: "Integration Engineer",
       menu: "Menú",
       close: "Cerrar",
       connect: "Conectar",
     },
     hero: {
       title: "Hola, soy Jesrig",
-      role: "Integration Engineer",
-      headline: "Conecto sistemas para que las operaciones fluyan mejor.",
+      headline: "Conecto sistemas y automatizo procesos para que las operaciones fluyan mejor.",
       subheadline:
-        "Diseño integraciones, automatizaciones y cloud workflows para ecommerce, CRM, reporting y herramientas internas.",
+        "Diseño integraciones cloud entre ecommerce, CRM, logística, facturación y reporting mediante APIs, webhooks y servicios serverless.",
       scrollLabel: "Explorar",
       actions: [
         { label: "Ver proyectos", href: "#projects" },
         { label: "Contactar", href: "#contact" },
       ],
       stats: [
-        { value: "4+ años", label: "construyendo software operativo" },
-        { value: "APIs + Cloud", label: "integraciones, webhooks y workflows" },
-        { value: "Ops first", label: "sistemas claros para equipos reales" },
+        { value: "10+ endpoints", label: "diseñados e integrados" },
+        { value: "8-10 h/sem", label: "ahorradas mediante automatización" },
+        { value: "18-25%", label: "reducción de costos cloud" },
       ],
     },
     about: {
@@ -63,7 +66,7 @@ export const siteContent = {
       title: "Sobre mí",
       description: "La forma en que pienso y construyo sistemas.",
       copy:
-        "Construyo software para conectar plataformas, ordenar datos y reducir tareas repetitivas. Me interesa que los sistemas sean simples de entender, mantener y operar.",
+        "Soy ingeniero de software especializado en integraciones y automatización. Traduzco necesidades operativas en APIs, servicios cloud y herramientas internas claras, medibles y mantenibles.",
       cardCopy: "Sistemas claros para operaciones reales.",
       focusAreas: ["Integraciones API", "Automatización Operativa", "Cloud Workflows"],
     },
@@ -105,26 +108,24 @@ export const siteContent = {
   },
   en: {
     header: {
-      role: "Integration Engineer",
       menu: "Menu",
       close: "Close",
       connect: "Connect",
     },
     hero: {
       title: "Hey, I'm Jesrig",
-      role: "Integration Engineer",
-      headline: "I connect systems so operations run smoother.",
+      headline: "I connect systems and automate workflows so operations run more smoothly.",
       subheadline:
-        "I design integrations, automations and cloud workflows for ecommerce, CRM, reporting and internal tools.",
+        "I design cloud integrations across ecommerce, CRM, logistics, billing and reporting using APIs, webhooks and serverless services.",
       scrollLabel: "Explore",
       actions: [
         { label: "View projects", href: "#projects" },
         { label: "Contact", href: "#contact" },
       ],
       stats: [
-        { value: "4+ years", label: "building operational software" },
-        { value: "APIs + Cloud", label: "integrations, webhooks and workflows" },
-        { value: "Ops first", label: "clear systems for real teams" },
+        { value: "10+ endpoints", label: "designed and integrated" },
+        { value: "8-10 hrs/week", label: "saved through automation" },
+        { value: "18-25%", label: "reduction in cloud costs" },
       ],
     },
     about: {
@@ -132,7 +133,7 @@ export const siteContent = {
       title: "About me",
       description: "How I think about and build systems.",
       copy:
-        "I build software that connects platforms, organizes data and reduces repetitive work. I care about systems that are easy to understand, maintain and operate.",
+        "I am a software engineer specializing in integration and automation. I translate operational needs into clear, measurable and maintainable APIs, cloud services and internal tools.",
       cardCopy: "Clear systems for real operations.",
       focusAreas: ["API Integrations", "Operations Automation", "Cloud Workflows"],
     },
@@ -284,28 +285,39 @@ export const experience = {
     {
       role: "IT Manager",
       company: "Alxedo",
-      period: "ene. 2025 - actualidad",
+      period: "ene. 2025 - ago. 2026",
       description:
-        "Orquesto integraciones y automatizaciones para que ecommerce, CRM, logística y reporting trabajen con datos consistentes.",
+        "Dirigí integraciones y automatizaciones entre ecommerce, CRM, logística, facturación y reporting para mantener datos consistentes y procesos trazables.",
       highlights: [
-        "Reduzco captura manual conectando flujos entre venta, seguimiento y reportes.",
-        "Mejoro trazabilidad entre equipos al centralizar eventos y estados operativos.",
-        "Diseño automatizaciones mantenibles para que los datos no dependan de pasos manuales.",
+        "Automaticé 4-5 flujos críticos y reduje aproximadamente 8-10 horas semanales de trabajo manual.",
+        "Construí reportes y tableros de ventas, envíos y suscripciones para fortalecer el control operativo.",
+        "Desarrollé servicios cloud para validar pedidos y clientes antes de que las inconsistencias afectaran la operación.",
       ],
-      stack: ["APIs", "Webhooks", "Shopify", "CRM", "Reporting", "Automation"],
+      stack: ["APIs", "Cloud Functions", "Shopify", "Kommo CRM", "Zapier", "Reporting"],
     },
     {
       role: "Software Engineer",
       company: "Alxedo",
-      period: "sept. 2021 - ene. 2025",
+      period: "mar. 2022 - ene. 2025",
       description:
-        "Construí APIs, servicios cloud y flujos internos con Node.js, Firebase, GCP y REST APIs para resolver procesos operativos reales.",
+        "Construí integraciones, servicios serverless y herramientas internas para conectar Shopify, CRM y procesos operativos.",
       highlights: [
-        "Implementé endpoints y servicios backend para conectar herramientas internas.",
-        "Trabajé con Firebase, Cloud Functions y bases de datos para apps de operación diaria.",
-        "Refactoricé flujos existentes para hacerlos más claros, mantenibles y fáciles de operar.",
+        "Diseñé e integré más de 10 endpoints mediante APIs REST y webhooks.",
+        "Implementé automatizaciones para procesar eventos, validar datos y reducir errores operativos.",
+        "Contribuí a reducir aproximadamente 18-25% los costos de infraestructura cloud.",
       ],
-      stack: ["Node.js", "Firebase", "GCP", "REST APIs", "JavaScript", "Firestore"],
+      stack: ["Node.js", "JavaScript", "Firebase", "Cloud Functions", "REST APIs", "Webhooks"],
+    },
+    {
+      role: "Software Developer Intern",
+      company: "Alxedo",
+      period: "sept. 2021 - feb. 2022",
+      description:
+        "Colaboré en el desarrollo de software y APIs para necesidades internas del negocio.",
+      highlights: [
+        "Apoyé la implementación de soluciones técnicas con acompañamiento del equipo.",
+      ],
+      stack: ["JavaScript", "APIs", "Backend"],
     },
     {
       role: "Web Developer",
@@ -322,42 +334,65 @@ export const experience = {
     {
       role: "Full Stack Developer",
       company: "BEMIRA MX",
-      period: "ene. 2019 - dic. 2019",
+      period: "jul. 2019 - dic. 2019",
       description:
-        "Participé en la mejora de aplicaciones internas, prototipos y herramientas para equipos operativos.",
+        "Mantuve y evolucioné la aplicación web interna para mejorar su estabilidad, funcionalidad y experiencia de usuario.",
       highlights: [
-        "Di soporte y evolución a herramientas internas usadas por equipos operativos.",
-        "Creé prototipos funcionales para validar mejoras antes de llevarlas a producción.",
+        "Depuré el sistema con PHP, JavaScript, HTML y CSS para asegurar la continuidad operativa.",
+        "Desarrollé funcionalidades orientadas a la experiencia de usuario y la eficiencia del equipo.",
       ],
-      stack: ["Full Stack", "JavaScript", "PHP", "MySQL", "Internal Tools"],
+      stack: ["PHP", "JavaScript", "HTML", "CSS", "Subversion"],
+    },
+    {
+      role: "Software Developer Intern",
+      company: "BEMIRA MX",
+      period: "ene. 2019 - jun. 2019",
+      description:
+        "Desarrollé un prototipo móvil funcional para validar una iniciativa interna de innovación.",
+      highlights: [
+        "Construí el prototipo en Xamarin y C# con servicios REST y funciones básicas de mapeo.",
+        "Diseñé diagramas UML y una base de datos PostgreSQL para comunicar y validar el sistema.",
+      ],
+      stack: ["Xamarin", "C#", "REST APIs", "PostgreSQL", "UML"],
     },
   ],
   en: [
     {
       role: "IT Manager",
       company: "Alxedo",
-      period: "Jan. 2025 - Present",
+      period: "Jan. 2025 - Aug. 2026",
       description:
-        "I orchestrate integrations and automations so ecommerce, CRM, logistics and reporting work with consistent data.",
+        "Led integrations and automations across ecommerce, CRM, logistics, billing and reporting to keep data consistent and processes traceable.",
       highlights: [
-        "Reduce manual entry by connecting sales, tracking and reporting workflows.",
-        "Improve traceability across teams by centralizing operational events and statuses.",
-        "Design maintainable automations so data does not depend on manual handoffs.",
+        "Automated 4-5 critical workflows and saved approximately 8-10 hours of manual work per week.",
+        "Built sales, shipping and subscription reports and dashboards to strengthen operational control.",
+        "Developed cloud services that validated orders and customers before inconsistencies affected operations.",
       ],
-      stack: ["APIs", "Webhooks", "Shopify", "CRM", "Reporting", "Automation"],
+      stack: ["APIs", "Cloud Functions", "Shopify", "Kommo CRM", "Zapier", "Reporting"],
     },
     {
       role: "Software Engineer",
       company: "Alxedo",
-      period: "Sep. 2021 - Jan. 2025",
+      period: "Mar. 2022 - Jan. 2025",
       description:
-        "Built APIs, cloud services and internal workflows with Node.js, Firebase, GCP and REST APIs for real operational processes.",
+        "Built integrations, serverless services and internal tools connecting Shopify, CRM and operational processes.",
       highlights: [
-        "Implemented backend services and endpoints that connect internal tools.",
-        "Worked with Firebase, Cloud Functions and databases for day-to-day operations apps.",
-        "Refactored existing workflows to make them clearer, maintainable and easier to operate.",
+        "Designed and integrated more than 10 endpoints using REST APIs and webhooks.",
+        "Implemented automations to process events, validate data and reduce operational errors.",
+        "Helped reduce cloud infrastructure costs by approximately 18-25%.",
       ],
-      stack: ["Node.js", "Firebase", "GCP", "REST APIs", "JavaScript", "Firestore"],
+      stack: ["Node.js", "JavaScript", "Firebase", "Cloud Functions", "REST APIs", "Webhooks"],
+    },
+    {
+      role: "Software Developer Intern",
+      company: "Alxedo",
+      period: "Sep. 2021 - Feb. 2022",
+      description:
+        "Contributed to software and API development for internal business needs.",
+      highlights: [
+        "Supported the implementation of technical solutions with guidance from the team.",
+      ],
+      stack: ["JavaScript", "APIs", "Backend"],
     },
     {
       role: "Web Developer",
@@ -374,14 +409,26 @@ export const experience = {
     {
       role: "Full Stack Developer",
       company: "BEMIRA MX",
-      period: "Jan. 2019 - Dec. 2019",
+      period: "Jul. 2019 - Dec. 2019",
       description:
-        "Contributed to internal application improvements, prototypes and tools for operations teams.",
+        "Maintained and evolved the internal web application to improve stability, functionality and user experience.",
       highlights: [
-        "Supported and evolved internal tools used by operations teams.",
-        "Created functional prototypes to validate process improvements before production.",
+        "Debugged the system with PHP, JavaScript, HTML and CSS to support operational continuity.",
+        "Developed features focused on user experience and team efficiency.",
       ],
-      stack: ["Full Stack", "JavaScript", "PHP", "MySQL", "Internal Tools"],
+      stack: ["PHP", "JavaScript", "HTML", "CSS", "Subversion"],
+    },
+    {
+      role: "Software Developer Intern",
+      company: "BEMIRA MX",
+      period: "Jan. 2019 - Jun. 2019",
+      description:
+        "Developed a functional mobile prototype to validate an internal innovation initiative.",
+      highlights: [
+        "Built the prototype in Xamarin and C# with REST services and basic mapping features.",
+        "Designed UML diagrams and a PostgreSQL database to communicate and validate the system.",
+      ],
+      stack: ["Xamarin", "C#", "REST APIs", "PostgreSQL", "UML"],
     },
   ],
 } satisfies Record<Language, Experience[]>;
@@ -394,11 +441,11 @@ export const skillGroups = {
     },
     {
       title: "Backend",
-      items: ["Node.js", "TypeScript", "JavaScript", "Express", "Python básico", "PHP"],
+      items: ["Node.js", "TypeScript", "JavaScript", "Express", "Python", "PHP", "SQL", "PostgreSQL"],
     },
     {
       title: "Cloud",
-      items: ["Google Cloud Functions", "Firebase", "Firestore", "GitHub Actions", "AWS fundamentals"],
+      items: ["Google Cloud", "Cloud Functions", "Firebase", "Firestore", "AWS fundamentals"],
     },
     {
       title: "Operaciones",
@@ -408,6 +455,9 @@ export const skillGroups = {
         "Reporting",
         "Ecommerce operations",
         "Process optimization",
+        "AI agents",
+        "Jira",
+        "ClickUp",
       ],
     },
   ],
@@ -418,11 +468,11 @@ export const skillGroups = {
     },
     {
       title: "Backend",
-      items: ["Node.js", "TypeScript", "JavaScript", "Express", "Basic Python", "PHP"],
+      items: ["Node.js", "TypeScript", "JavaScript", "Express", "Python", "PHP", "SQL", "PostgreSQL"],
     },
     {
       title: "Cloud",
-      items: ["Google Cloud Functions", "Firebase", "Firestore", "GitHub Actions", "AWS fundamentals"],
+      items: ["Google Cloud", "Cloud Functions", "Firebase", "Firestore", "AWS fundamentals"],
     },
     {
       title: "Operations",
@@ -432,6 +482,9 @@ export const skillGroups = {
         "Reporting",
         "Ecommerce operations",
         "Process optimization",
+        "AI agents",
+        "Jira",
+        "ClickUp",
       ],
     },
   ],

@@ -50,9 +50,9 @@ __turbopack_context__.s([
 ]);
 function manifest() {
     return {
-        name: "Jesrig Pineda | Integration Engineer",
+        name: "Jesrig Pineda | Software & Integration Engineer",
         short_name: "Jesrig",
-        description: "Portfolio focused on integrations, automation, cloud workflows and internal tools.",
+        description: "Portfolio focused on software engineering, systems integration, automation and cloud solutions.",
         start_url: "/",
         display: "standalone",
         background_color: "#f4f4f2",

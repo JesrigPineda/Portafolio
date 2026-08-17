@@ -10,11 +10,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://jesrig.dev"),
   title: {
-    default: "Jesrig Pineda | Integration Engineer",
+    default: "Jesrig Pineda | Software & Integration Engineer",
     template: "%s | Jesrig Pineda",
   },
   description:
-    "Integration Engineer focused on APIs, automation, cloud workflows and internal tools for smoother operations.",
+    "Software and integration engineer focused on APIs, automation, cloud solutions and internal tools for scalable operations.",
   applicationName: "Jesrig Pineda Portfolio",
   authors: [{ name: "Jesrig Pineda", url: "https://x.com/JesrigPineda" }],
   creator: "Jesrig Pineda",
@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     "Jesrig Pineda",
     "Integration Engineer",
     "Automation Engineer",
+    "Software Engineer",
     "API integrations",
     "Cloud workflows",
     "Shopify integrations",
@@ -34,9 +35,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Jesrig Pineda | Integration Engineer",
+    title: "Jesrig Pineda | Software & Integration Engineer",
     description:
-      "I design integrations, automations and cloud workflows for ecommerce, CRM, reporting and internal tools.",
+      "I build cloud integrations and automations across ecommerce, CRM, logistics, billing and reporting.",
     url: "/",
     siteName: "Jesrig Pineda",
     locale: "es_MX",
@@ -46,15 +47,15 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Jesrig Pineda - Integration Engineer",
+        alt: "Jesrig Pineda - Software and Integration Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jesrig Pineda | Integration Engineer",
+    title: "Jesrig Pineda | Software & Integration Engineer",
     description:
-      "Integrations, automations and cloud workflows for smoother operations.",
+      "Cloud integrations and automation for scalable operations.",
     creator: "@JesrigPineda",
     images: ["/twitter-image"],
   },

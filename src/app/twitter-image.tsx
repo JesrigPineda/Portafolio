@@ -1,7 +1,7 @@
 import OpenGraphImage from "./opengraph-image";
 
 export const runtime = "edge";
-export const alt = "Jesrig Pineda - Integration Engineer";
+export const alt = "Jesrig Pineda - Software and Integration Engineer";
 export const size = {
   width: 1200,
   height: 630,

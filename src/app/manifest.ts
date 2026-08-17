@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Jesrig Pineda | Integration Engineer",
+    name: "Jesrig Pineda | Software & Integration Engineer",
     short_name: "Jesrig",
     description:
-      "Portfolio focused on integrations, automation, cloud workflows and internal tools.",
+      "Portfolio focused on software engineering, systems integration, automation and cloud solutions.",
     start_url: "/",
     display: "standalone",
     background_color: "#f4f4f2",

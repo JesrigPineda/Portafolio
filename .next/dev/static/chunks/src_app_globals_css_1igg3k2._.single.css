@@ -1185,6 +1185,24 @@ a:focus-visible, button:focus-visible {
   width: 100%;
 }
 
+.rotating-role {
+  min-height: 1.3em;
+  display: block;
+  overflow: hidden;
+}
+
+.rotating-role__text {
+  will-change: opacity, transform;
+  animation: .52s cubic-bezier(.22, 1, .36, 1) both role-reveal;
+  display: block;
+}
+
+.rotating-role--compact, .rotating-role--compact .rotating-role__text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .section-heading {
   max-width: 720px;
 }
@@ -1878,6 +1896,22 @@ html.dark .scroll-progress span {
   .section-shell, .experience-entry {
     opacity: 1;
     transform: none;
+  }
+
+  .rotating-role__text {
+    animation: none;
+  }
+}
+
+@keyframes role-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(.35em);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
