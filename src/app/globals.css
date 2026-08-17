@@ -346,6 +346,50 @@ button:focus-visible {
   line-height: 1.45;
 }
 
+.hero-stats-note {
+  display: flex;
+  width: fit-content;
+  margin-top: 0.8rem;
+  color: var(--text-quaternary);
+  font-size: 0.7rem;
+  font-weight: 650;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.hero-stats-note:hover {
+  color: var(--foreground);
+}
+
+.about-step {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-step__number {
+  display: inline-grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  color: var(--text-tertiary);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  border: 1px solid color-mix(in srgb, var(--line) 86%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 60%, transparent);
+}
+
+.about-step + .about-step::before {
+  position: absolute;
+  top: 2.05rem;
+  left: -0.8rem;
+  width: 1.6rem;
+  height: 1px;
+  content: "";
+  background: color-mix(in srgb, var(--line) 82%, transparent);
+}
+
 .projects-showcase {
   display: grid;
   gap: 1rem;
@@ -369,9 +413,14 @@ button:focus-visible {
 
 .project-media {
   position: relative;
+  display: grid;
+  place-items: center;
   overflow: hidden;
   aspect-ratio: 16 / 10;
-  background: linear-gradient(135deg, var(--surface-soft), var(--background));
+  padding: clamp(1rem, 4vw, 2.25rem);
+  background:
+    radial-gradient(circle at 82% 14%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 30%),
+    linear-gradient(135deg, var(--surface-soft), var(--background));
 }
 
 .project-media::after {
@@ -391,6 +440,152 @@ button:focus-visible {
   transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.project-system {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: min(100%, 38rem);
+  min-height: 10.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  color: var(--foreground);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  border: 1px solid color-mix(in srgb, var(--line) 88%, transparent);
+  border-radius: 0.9rem;
+  background: color-mix(in srgb, var(--surface) 80%, transparent);
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 color-mix(in srgb, #ffffff 44%, transparent);
+}
+
+.project-system__topline,
+.project-system__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--text-tertiary);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.project-system__footer {
+  padding-top: 0.8rem;
+  border-top: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
+}
+
+.project-system__footer strong {
+  color: var(--foreground);
+  font-weight: 750;
+}
+
+.project-system__live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  color: var(--foreground);
+}
+
+.project-system__live::before {
+  width: 0.42rem;
+  height: 0.42rem;
+  content: "";
+  border-radius: 999px;
+  background: #32d74b;
+  box-shadow: 0 0 0 0.18rem rgba(50, 215, 75, 0.12);
+}
+
+.project-flow,
+.approval-route {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding-block: 1.5rem;
+}
+
+.project-flow span,
+.approval-route span {
+  padding: 0.55rem 0.68rem;
+  color: var(--text-secondary);
+  font-size: clamp(0.56rem, 1.6vw, 0.68rem);
+  font-weight: 750;
+  border: 1px solid color-mix(in srgb, var(--line) 82%, transparent);
+  border-radius: 0.5rem;
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+}
+
+.project-flow i,
+.approval-route i {
+  width: clamp(0.7rem, 3vw, 1.8rem);
+  height: 1px;
+  background: color-mix(in srgb, var(--foreground) 24%, transparent);
+}
+
+.approval-route__done {
+  color: var(--foreground) !important;
+}
+
+.approval-route__active {
+  color: var(--accent-foreground) !important;
+  background: var(--accent) !important;
+}
+
+.monitor-list,
+.agent-thread {
+  display: grid;
+  gap: 0.48rem;
+  padding-block: 0.9rem;
+}
+
+.monitor-list > div {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 0.65rem;
+  color: var(--text-secondary);
+  font-size: 0.62rem;
+  border: 1px solid color-mix(in srgb, var(--line) 74%, transparent);
+  border-radius: 0.45rem;
+}
+
+.monitor-list i {
+  height: 1px;
+  background: color-mix(in srgb, var(--line) 84%, transparent);
+}
+
+.monitor-list strong {
+  color: #248a3d;
+  font-size: 0.6rem;
+}
+
+.monitor-list__incident strong {
+  color: #d70015;
+}
+
+.agent-thread p {
+  max-width: 84%;
+  margin: 0;
+  padding: 0.6rem 0.7rem;
+  color: var(--text-secondary);
+  font-size: 0.6rem;
+  line-height: 1.5;
+  border: 1px solid color-mix(in srgb, var(--line) 76%, transparent);
+  border-radius: 0.65rem 0.65rem 0.65rem 0.18rem;
+  background: color-mix(in srgb, var(--surface) 68%, transparent);
+}
+
+.agent-thread p:last-child {
+  margin-left: auto;
+  color: var(--accent-foreground);
+  border-color: transparent;
+  border-radius: 0.65rem 0.65rem 0.18rem 0.65rem;
+  background: var(--accent);
+}
+
 .project-card:hover .project-image {
   transform: scale(1.035);
 }
@@ -401,6 +596,63 @@ button:focus-visible {
 
 .project-card--featured .project-content {
   padding: 1.25rem;
+}
+
+.project-year {
+  margin-left: auto;
+  color: var(--text-quaternary);
+  font-size: 0.68rem;
+  font-weight: 750;
+}
+
+.project-role {
+  width: fit-content;
+  padding: 0.38rem 0.58rem;
+  color: var(--text-tertiary);
+  font-size: 0.7rem;
+  font-weight: 750;
+  border: 1px solid color-mix(in srgb, var(--line) 74%, transparent);
+  border-radius: 999px;
+}
+
+.case-study-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.case-study-grid > div {
+  padding: 1rem;
+  border: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--surface-soft) 42%, transparent);
+}
+
+.case-study-grid > div > p:last-child,
+.project-story p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
+.case-study-label {
+  margin: 0 0 0.55rem;
+  color: var(--foreground);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-story {
+  display: grid;
+  gap: 0.65rem;
+  padding-top: 1rem;
+  border-top: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
+}
+
+.project-story strong {
+  color: var(--foreground);
 }
 
 .project-status {
@@ -844,6 +1096,10 @@ html.dark .scroll-progress span {
 }
 
 @media (min-width: 760px) {
+  .case-study-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .projects-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

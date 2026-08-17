@@ -49,6 +49,9 @@ export function Hero() {
             </div>
           ))}
         </div>
+        <a href="#experience" className="hero-stats-note">
+          {copy.statsNote}
+        </a>
 
         <a href="#about" className="hero-cue mt-14" aria-label={copy.scrollLabel}>
           <span>{copy.scrollLabel}</span>

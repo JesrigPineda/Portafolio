@@ -1,25 +1,15 @@
 "use client";
 
-import { links, siteContent, type Language } from "@/data/site";
+import { links, siteContent } from "@/data/site";
 import { useLanguage } from "@/components/language-provider";
-
-const contactLinks: Record<Language, { label: string; href: string }[]> = {
-  es: [
-    { label: "Contactar en LinkedIn", href: links.linkedin },
-    { label: "Ver GitHub", href: links.github },
-    { label: "Seguir en X", href: links.x },
-  ],
-  en: [
-    { label: "Contact on LinkedIn", href: links.linkedin },
-    { label: "View GitHub", href: links.github },
-    { label: "Follow on X", href: links.x },
-  ],
-};
 
 export function Contact() {
   const { language } = useLanguage();
   const copy = siteContent[language].contact;
-  const contactOptions = contactLinks[language];
+  const contactOptions = [
+    { label: copy.linkedin, href: links.linkedin, primary: true },
+    { label: copy.github, href: links.github, primary: false },
+  ];
 
   return (
     <section id="contact" className="section-shell pb-12">
@@ -34,7 +24,7 @@ export function Contact() {
               href={link.href}
               target="_blank"
               rel="noreferrer"
-              className="button-secondary rounded-md px-4 py-2 text-center text-sm font-semibold"
+              className={`${link.primary ? "button-primary" : "button-secondary"} rounded-md px-4 py-2 text-center text-sm font-semibold`}
             >
               {link.label}
             </a>

@@ -1,8 +1,8 @@
 export type Language = "es" | "en";
 
 export const professionalRoles = {
-  es: ["Software Engineer", "Integration Engineer", "Automation Engineer", "Full Stack Developer"],
-  en: ["Software Engineer", "Integration Engineer", "Automation Engineer", "Full Stack Developer"],
+  es: ["Software Engineer", "Integration Engineer", "Automation Engineer"],
+  en: ["Software Engineer", "Integration Engineer", "Automation Engineer"],
 } satisfies Record<Language, readonly string[]>;
 
 export const links = {
@@ -24,7 +24,6 @@ export const navItems = {
     { label: "Proyectos", href: "#projects" },
     { label: "Experiencia", href: "#experience" },
     { label: "Herramientas", href: "#skills" },
-    { label: "Blog", href: "#notes" },
     { label: "Contacto", href: "#contact" },
   ],
   en: [
@@ -33,7 +32,6 @@ export const navItems = {
     { label: "Projects", href: "#projects" },
     { label: "Experience", href: "#experience" },
     { label: "Tools", href: "#skills" },
-    { label: "Blog", href: "#notes" },
     { label: "Contact", href: "#contact" },
   ],
 } satisfies Record<Language, { label: string; href: string }[]>;
@@ -51,58 +49,70 @@ export const siteContent = {
       subheadline:
         "Diseño integraciones cloud entre ecommerce, CRM, logística, facturación y reporting mediante APIs, webhooks y servicios serverless.",
       scrollLabel: "Explorar",
-      actions: [
-        { label: "Ver proyectos", href: "#projects" },
-        { label: "Contactar", href: "#contact" },
-      ],
+      actions: [{ label: "Ver caso de estudio", href: "#projects" }],
       stats: [
-        { value: "10+ endpoints", label: "diseñados e integrados" },
-        { value: "8-10 h/sem", label: "ahorradas mediante automatización" },
-        { value: "18-25%", label: "reducción de costos cloud" },
+        { value: "10+ endpoints", label: "entre ecommerce, CRM y servicios internos" },
+        { value: "8-10 h/sem", label: "ahorradas en 4-5 flujos críticos" },
+        { value: "18-25%", label: "menos costo de infraestructura cloud" },
       ],
+      statsNote: "Resultados aproximados obtenidos durante mi experiencia en Alxedo.",
     },
     about: {
       eyebrow: "Perfil",
-      title: "Sobre mí",
-      description: "La forma en que pienso y construyo sistemas.",
+      title: "De la fricción operativa a un sistema claro",
+      description: "Cómo evolucionó mi forma de construir software.",
       copy:
-        "Soy ingeniero de software especializado en integraciones y automatización. Traduzco necesidades operativas en APIs, servicios cloud y herramientas internas claras, medibles y mantenibles.",
-      cardCopy: "Sistemas claros para operaciones reales.",
-      focusAreas: ["Integraciones API", "Automatización Operativa", "Cloud Workflows"],
+        "Comencé construyendo interfaces y herramientas internas. Al trabajar más cerca de ecommerce y operaciones entendí que el reto rara vez es una sola pantalla: son los datos, reglas y equipos que deben coordinarse detrás. Por eso mi trabajo evolucionó hacia integraciones, automatización y servicios cloud que convierten procesos dispersos en flujos trazables.",
+      focusAreas: [
+        {
+          step: "01",
+          title: "Entender la operación",
+          description: "Mapeo eventos, reglas, responsables y puntos de falla antes de elegir tecnología.",
+        },
+        {
+          step: "02",
+          title: "Diseñar límites confiables",
+          description: "Uso contratos, validación e idempotencia para que cada integración falle de forma visible y segura.",
+        },
+        {
+          step: "03",
+          title: "Dejar trazabilidad",
+          description: "Construyo flujos medibles y mantenibles para que el equipo pueda entenderlos y operarlos.",
+        },
+      ],
     },
     projects: {
       eyebrow: "Proyectos",
-      title: "Proyectos destacados",
-      description: "Trabajo práctico orientado a integraciones, backend y operación.",
-      cardLabel: "Caso práctico",
-      github: "Ver GitHub",
+      title: "Sistemas construidos alrededor de problemas reales",
+      description: "Cuatro proyectos públicos que muestran cómo abordo integración, automatización, confiabilidad e IA aplicada.",
+      cardLabel: "Caso de estudio",
+      projectLabel: "Proyecto público",
+      problemLabel: "El problema",
+      solutionLabel: "La solución",
+      outcomeLabel: "Lo que demuestra",
+      github: "Explorar repositorio",
       status: {
-        active: "Activo",
-        archived: "Archivado",
+        active: "Público",
+        archived: "Completado",
       },
     },
     experience: {
       eyebrow: "Trayectoria",
       title: "Experiencia",
-      description: "De desarrollo de software a operación tecnológica e integración de sistemas.",
+      description: "De prototipos y desarrollo web a integraciones que sostienen operaciones.",
     },
     skills: {
       eyebrow: "Herramientas",
       title: "Stack y enfoque",
       description: "Tecnologías que uso para conectar sistemas y mantener flujos estables.",
     },
-    notes: {
-      eyebrow: "Blog",
-      title: "Ideas sobre integración y automatización",
-      description:
-        "Próximamente publicaré en Hashnode notas prácticas sobre APIs, webhooks, automatización operativa y cloud workflows.",
-      cta: "Próximamente",
-    },
     contact: {
       eyebrow: "Contacto",
-      title: "¿Construimos algo útil?",
+      title: "¿Hablamos de software, integraciones o automatización?",
       copy:
-        "Si tu operación depende de muchas herramientas desconectadas, puedo ayudarte a ordenarlas.",
+        "Puedes encontrarme en LinkedIn para conversar sobre oportunidades y seguir mis proyectos técnicos en GitHub.",
+      linkedin: "Contactar en LinkedIn",
+      github: "Ver GitHub",
     },
     footer: "Integraciones, automatización y cloud workflows.",
   },
@@ -118,58 +128,70 @@ export const siteContent = {
       subheadline:
         "I design cloud integrations across ecommerce, CRM, logistics, billing and reporting using APIs, webhooks and serverless services.",
       scrollLabel: "Explore",
-      actions: [
-        { label: "View projects", href: "#projects" },
-        { label: "Contact", href: "#contact" },
-      ],
+      actions: [{ label: "View case study", href: "#projects" }],
       stats: [
-        { value: "10+ endpoints", label: "designed and integrated" },
-        { value: "8-10 hrs/week", label: "saved through automation" },
-        { value: "18-25%", label: "reduction in cloud costs" },
+        { value: "10+ endpoints", label: "across ecommerce, CRM and internal services" },
+        { value: "8-10 hrs/week", label: "saved across 4-5 critical workflows" },
+        { value: "18-25%", label: "lower cloud infrastructure costs" },
       ],
+      statsNote: "Approximate results achieved during my experience at Alxedo.",
     },
     about: {
       eyebrow: "Profile",
-      title: "About me",
-      description: "How I think about and build systems.",
+      title: "From operational friction to a clear system",
+      description: "How my approach to building software evolved.",
       copy:
-        "I am a software engineer specializing in integration and automation. I translate operational needs into clear, measurable and maintainable APIs, cloud services and internal tools.",
-      cardCopy: "Clear systems for real operations.",
-      focusAreas: ["API Integrations", "Operations Automation", "Cloud Workflows"],
+        "I started by building interfaces and internal tools. Working closer to ecommerce and operations taught me that the challenge is rarely a single screen: it is the data, rules and teams that must coordinate behind it. That moved my work toward integrations, automation and cloud services that turn fragmented processes into traceable workflows.",
+      focusAreas: [
+        {
+          step: "01",
+          title: "Understand the operation",
+          description: "I map events, rules, owners and failure points before choosing the technology.",
+        },
+        {
+          step: "02",
+          title: "Design reliable boundaries",
+          description: "I use contracts, validation and idempotency so each integration fails visibly and safely.",
+        },
+        {
+          step: "03",
+          title: "Leave a trace",
+          description: "I build measurable, maintainable workflows that teams can understand and operate.",
+        },
+      ],
     },
     projects: {
       eyebrow: "Projects",
-      title: "Featured projects",
-      description: "Practical work across integrations, backend and operations.",
+      title: "Systems built around real problems",
+      description: "Four public projects showing how I approach integration, automation, reliability and applied AI.",
       cardLabel: "Case study",
-      github: "View GitHub",
+      projectLabel: "Public project",
+      problemLabel: "The problem",
+      solutionLabel: "The solution",
+      outcomeLabel: "What it demonstrates",
+      github: "Explore repository",
       status: {
-        active: "Active",
-        archived: "Archived",
+        active: "Public",
+        archived: "Completed",
       },
     },
     experience: {
       eyebrow: "Background",
       title: "Experience",
-      description: "From software development to technology operations and systems integration.",
+      description: "From prototypes and web development to integrations that support operations.",
     },
     skills: {
       eyebrow: "Tools",
       title: "Stack and focus",
       description: "Technologies I use to connect systems and keep workflows stable.",
     },
-    notes: {
-      eyebrow: "Blog",
-      title: "Notes on integration and automation",
-      description:
-        "Soon I will publish practical Hashnode notes about APIs, webhooks, operations automation and cloud workflows.",
-      cta: "Coming soon",
-    },
     contact: {
       eyebrow: "Contact",
-      title: "Build something useful?",
+      title: "Let's talk about software, integrations or automation",
       copy:
-        "If your operation depends on too many disconnected tools, I can help you bring them together.",
+        "Find me on LinkedIn to discuss opportunities and follow my technical projects on GitHub.",
+      linkedin: "Contact on LinkedIn",
+      github: "View GitHub",
     },
     footer: "Integrations, automation and cloud workflows.",
   },
@@ -179,8 +201,16 @@ export const projects = {
   es: [
     {
       title: "Commerce Ops Webhook Bridge",
-      description:
-        "Puente backend para recibir pedidos de Shopify, validar reglas de negocio y dejar trazabilidad operativa en Firestore.",
+      summary:
+        "Un límite confiable entre eventos crudos de Shopify y los flujos internos de fulfillment, facturación, CRM y reporting.",
+      problem:
+        "Los webhooks de ecommerce no siempre están listos para consumo interno: pueden ser inválidos, duplicados o no representar las reglas que necesita la operación.",
+      solution:
+        "Construí un servicio que verifica firmas HMAC, valida con Zod, transforma cada pedido a un contrato SalesOrder, aplica reglas de negocio y evita procesamiento duplicado.",
+      outcome:
+        "Una integración pequeña pero realista donde autenticidad, contratos, idempotencia y persistencia hacen que cada evento sea seguro y trazable.",
+      role: "Arquitectura e implementación end-to-end",
+      year: "2026",
       stack: [
         "Node.js",
         "TypeScript",
@@ -191,47 +221,75 @@ export const projects = {
         "Vitest",
         "Shopify Webhooks",
       ],
-      href: links.github,
+      href: "https://github.com/JesrigPineda/commerce-ops-webhook-bridge",
       status: "active",
-      image: "commerce",
-      imageAlt: "Vista previa del panel Commerce Ops Webhook Bridge.",
+      visual: "commerce",
     },
     {
-      title: "WaterWatch",
-      description:
-        "Plataforma ciudadana para reportar fugas de agua, con base cloud para capturar incidencias y visualizar reportes.",
-      stack: ["Firebase", "Cloud Functions", "Node.js", "JavaScript"],
-      href: links.github,
-      status: "archived",
-      image: "waterwatch",
-      imageAlt: "Captura de pantalla de la landing page de WaterWatch.",
+      title: "Ops Request Approval Automation",
+      summary:
+        "Convierte solicitudes dispersas por correo o chat en un flujo de aprobación gobernado y auditable.",
+      problem:
+        "La captura incompleta, los aprobadores ambiguos y las solicitudes duplicadas generan seguimiento manual y poca evidencia.",
+      solution:
+        "Una API con FastAPI y Pydantic que valida solicitudes, calcula rutas de aprobación, detecta duplicados y conserva cada transición en SQLite.",
+      outcome:
+        "Reglas operativas explícitas, historial auditable, notificaciones y métricas sin depender de seguimiento manual.",
+      role: "Diseño del workflow y reglas de negocio",
+      year: "2026",
+      stack: ["Python", "FastAPI", "Pydantic", "SQLite", "Slack Webhooks", "Pytest"],
+      href: "https://github.com/JesrigPineda/ops-request-approval-automation",
+      status: "active",
+      visual: "approval",
     },
     {
-      title: "SafePaws",
-      description:
-        "Experiencia web para conectar dueños de mascotas con cuidadores, apoyada por Firebase y flujos de búsqueda simples.",
-      stack: ["Firebase", "Cloud Functions", "Node.js", "React"],
-      href: links.github,
-      status: "archived",
-      image: "safepaws",
-      imageAlt: "Captura de pantalla de la landing page de SafePaws.",
+      title: "Serverless Ops Health Monitor",
+      summary:
+        "Monitorea endpoints críticos y convierte fallos silenciosos en incidentes con contexto y trazabilidad.",
+      problem:
+        "Un webhook o API interna puede fallar durante horas antes de que el equipo detecte el impacto operativo.",
+      solution:
+        "Cloud Functions ejecuta verificaciones manuales y programadas, persiste resultados en Firestore y crea incidentes con logs correlacionados.",
+      outcome:
+        "Combina patrones request-driven, time-driven y event-driven con una arquitectura serverless simple y mantenible.",
+      role: "Arquitectura serverless y observabilidad",
+      year: "2026",
+      stack: ["TypeScript", "Firebase Functions", "Firestore", "Cloud Scheduler", "Zod", "Vitest"],
+      href: "https://github.com/JesrigPineda/serverless-ops-health-monitor",
+      status: "active",
+      visual: "monitor",
     },
     {
-      title: "Turi",
-      description:
-        "Landing turística para descubrir pueblos mágicos de México, combinando búsqueda, mapas y contenido visual.",
-      stack: ["React", "JavaScript", "CSS", "Maps"],
-      href: links.github,
-      status: "archived",
-      image: "turi",
-      imageAlt: "Captura de pantalla de la landing page de Turi.",
+      title: "Local Lead Qualification Agent",
+      summary:
+        "Agente local que transforma conversaciones en datos estructurados y acciones operativas trazables.",
+      problem:
+        "Una conversación comercial solo es útil para la operación si produce información estable, validada y reutilizable.",
+      solution:
+        "Un agente con Ollama, Fastify y Zod comparte lógica entre API y CLI, mantiene memoria compacta y registra mensajes, estado y handoffs en SQLite.",
+      outcome:
+        "Una arquitectura de IA práctica, local-first y sin frameworks pesados, preparada para intercambiar el proveedor del modelo.",
+      role: "Orquestación, memoria y tool calling",
+      year: "2026",
+      stack: ["TypeScript", "Fastify", "Ollama", "Zod", "SQLite", "Vitest"],
+      href: "https://github.com/JesrigPineda/lead-qualification-agent-local",
+      status: "active",
+      visual: "agent",
     },
   ],
   en: [
     {
       title: "Commerce Ops Webhook Bridge",
-      description:
-        "Backend bridge for receiving Shopify orders, validating business rules and keeping operational traceability in Firestore.",
+      summary:
+        "A reliable boundary between raw Shopify events and internal fulfillment, billing, CRM and reporting workflows.",
+      problem:
+        "Ecommerce webhooks are not always ready for internal use: they may be invalid, duplicated or fail to represent the rules the operation needs.",
+      solution:
+        "I built a service that verifies HMAC signatures, validates with Zod, maps each order to a SalesOrder contract, applies business rules and prevents duplicate processing.",
+      outcome:
+        "A small but realistic integration where authenticity, contracts, idempotency and persistence make every event safe and traceable.",
+      role: "End-to-end architecture and implementation",
+      year: "2026",
       stack: [
         "Node.js",
         "TypeScript",
@@ -242,40 +300,60 @@ export const projects = {
         "Vitest",
         "Shopify Webhooks",
       ],
-      href: links.github,
+      href: "https://github.com/JesrigPineda/commerce-ops-webhook-bridge",
       status: "active",
-      image: "commerce",
-      imageAlt: "Preview of the Commerce Ops Webhook Bridge dashboard.",
+      visual: "commerce",
     },
     {
-      title: "WaterWatch",
-      description:
-        "Citizen platform for reporting water leaks, with cloud foundations for capturing incidents and visualizing reports.",
-      stack: ["Firebase", "Cloud Functions", "Node.js", "JavaScript"],
-      href: links.github,
-      status: "archived",
-      image: "waterwatch",
-      imageAlt: "Screenshot of the WaterWatch landing page.",
+      title: "Ops Request Approval Automation",
+      summary:
+        "Turns requests scattered across email or chat into a governed, auditable approval workflow.",
+      problem:
+        "Incomplete intake, unclear approvers and duplicate requests create manual follow-up and weak evidence.",
+      solution:
+        "A FastAPI and Pydantic API validates requests, calculates approval routes, detects duplicates and preserves every transition in SQLite.",
+      outcome:
+        "Explicit operational rules, auditable history, notifications and metrics without manual tracking.",
+      role: "Workflow and business rule design",
+      year: "2026",
+      stack: ["Python", "FastAPI", "Pydantic", "SQLite", "Slack Webhooks", "Pytest"],
+      href: "https://github.com/JesrigPineda/ops-request-approval-automation",
+      status: "active",
+      visual: "approval",
     },
     {
-      title: "SafePaws",
-      description:
-        "Web experience for connecting pet owners with caretakers, supported by Firebase and simple search flows.",
-      stack: ["Firebase", "Cloud Functions", "Node.js", "React"],
-      href: links.github,
-      status: "archived",
-      image: "safepaws",
-      imageAlt: "Screenshot of the SafePaws landing page.",
+      title: "Serverless Ops Health Monitor",
+      summary:
+        "Monitors critical endpoints and turns silent failures into incidents with context and traceability.",
+      problem:
+        "A webhook or internal API can fail for hours before the team discovers the operational impact.",
+      solution:
+        "Cloud Functions runs manual and scheduled checks, persists results in Firestore and creates incidents with correlated logs.",
+      outcome:
+        "Combines request-driven, time-driven and event-driven patterns in a simple, maintainable serverless architecture.",
+      role: "Serverless architecture and observability",
+      year: "2026",
+      stack: ["TypeScript", "Firebase Functions", "Firestore", "Cloud Scheduler", "Zod", "Vitest"],
+      href: "https://github.com/JesrigPineda/serverless-ops-health-monitor",
+      status: "active",
+      visual: "monitor",
     },
     {
-      title: "Turi",
-      description:
-        "Tourism landing page for discovering magical towns in Mexico, combining search, maps and visual content.",
-      stack: ["React", "JavaScript", "CSS", "Maps"],
-      href: links.github,
-      status: "archived",
-      image: "turi",
-      imageAlt: "Screenshot of the Turi landing page.",
+      title: "Local Lead Qualification Agent",
+      summary:
+        "A local agent that turns conversations into structured data and traceable operational actions.",
+      problem:
+        "A sales conversation only helps the operation when it produces stable, validated and reusable information.",
+      solution:
+        "An Ollama, Fastify and Zod agent shares logic across API and CLI, keeps compact memory and records messages, lead state and handoffs in SQLite.",
+      outcome:
+        "A practical local-first AI architecture without heavyweight frameworks, ready to swap model providers.",
+      role: "Orchestration, memory and tool calling",
+      year: "2026",
+      stack: ["TypeScript", "Fastify", "Ollama", "Zod", "SQLite", "Vitest"],
+      href: "https://github.com/JesrigPineda/lead-qualification-agent-local",
+      status: "active",
+      visual: "agent",
     },
   ],
 } satisfies Record<Language, Project[]>;
@@ -490,37 +568,18 @@ export const skillGroups = {
   ],
 } satisfies Record<Language, SkillGroup[]>;
 
-export const articles = {
-  es: [
-    {
-      title: "Writing on Hashnode",
-      description:
-        "Notas prácticas sobre integraciones, automatización y sistemas cloud para operaciones reales.",
-      date: "Próximamente",
-      tags: ["APIs", "Webhooks", "Cloud"],
-      url: null,
-    },
-  ],
-  en: [
-    {
-      title: "Writing on Hashnode",
-      description:
-        "Practical notes about integrations, automation and cloud systems for real operations.",
-      date: "Coming soon",
-      tags: ["APIs", "Webhooks", "Cloud"],
-      url: null,
-    },
-  ],
-} satisfies Record<Language, Article[]>;
-
 type Project = {
   title: string;
-  description: string;
+  summary: string;
+  problem: string;
+  solution: string;
+  outcome: string;
+  role: string;
+  year: string;
   stack: string[];
   href: string;
   status: "active" | "archived";
-  image: "commerce" | "waterwatch" | "safepaws" | "turi";
-  imageAlt: string;
+  visual: "commerce" | "approval" | "monitor" | "agent";
 };
 
 type Experience = {
@@ -535,12 +594,4 @@ type Experience = {
 type SkillGroup = {
   title: string;
   items: string[];
-};
-
-type Article = {
-  title: string;
-  description: string;
-  date: string;
-  tags: string[];
-  url: string | null;
 };

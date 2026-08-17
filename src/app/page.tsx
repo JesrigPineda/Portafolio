@@ -5,7 +5,6 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { LanguageProvider } from "@/components/language-provider";
-import { Notes } from "@/components/notes";
 import { Projects } from "@/components/projects";
 import { ScrollExperience } from "@/components/scroll-experience";
 import { Skills } from "@/components/skills";
@@ -21,7 +20,6 @@ export default function Home() {
         <Projects />
         <Experience />
         <Skills />
-        <Notes />
         <Contact />
         <Footer />
       </main>
