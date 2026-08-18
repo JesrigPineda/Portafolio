@@ -1,61 +1,52 @@
 "use client";
 
-import { professionalRoles, siteContent } from "@/data/site";
+import { links, siteContent } from "@/data/site";
 import { useLanguage } from "@/components/language-provider";
-import { RotatingRole } from "@/components/rotating-role";
 
 export function Hero() {
   const { language } = useLanguage();
   const copy = siteContent[language].hero;
 
   return (
-    <section id="home" className="section-shell hero-section">
-      <div>
-        <h1 className="text-[clamp(2.85rem,13vw,4.5rem)] font-semibold leading-none tracking-normal text-primary sm:text-7xl">
-          {copy.title}
-        </h1>
-        <p className="mt-4 text-[clamp(1.45rem,7vw,2.25rem)] font-semibold leading-none text-tertiary sm:text-4xl">
-          <RotatingRole roles={professionalRoles[language]} />
-        </p>
+    <section id="home" className="hero-section section-shell section-visible">
+      <div className="hero-intro">
+        <p className="hero-role">{copy.role}</p>
+        <p className="hero-specialization">{copy.specialization}</p>
+      </div>
 
-        <p className="mt-10 max-w-3xl text-[clamp(1.85rem,8vw,3rem)] font-semibold leading-tight tracking-normal text-primary sm:mt-12 sm:text-5xl">
-          {copy.headline}
-        </p>
-        <p className="mt-5 max-w-2xl text-lg leading-8 text-secondary">
-          {copy.subheadline}
-        </p>
+      <h1 className="hero-title">{copy.headline}</h1>
+      <p className="hero-copy">{copy.subheadline}</p>
 
-        <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-          {copy.actions.map((action, index) => (
-            <a
-              key={action.label}
-              href={action.href}
-              className={
-                index === 0
-                  ? "button-primary rounded-full px-5 py-2.5 text-center text-sm font-semibold shadow-sm hover:-translate-y-0.5 hover:shadow-lg"
-                  : "button-secondary rounded-full px-5 py-2.5 text-center text-sm font-semibold hover:-translate-y-0.5"
-              }
-            >
-              {action.label}
-            </a>
-          ))}
-        </div>
-
-        <div className="hero-stats" aria-label={language === "es" ? "Resumen profesional" : "Professional summary"}>
-          {copy.stats.map((stat) => (
-            <div key={stat.value} className="hero-stat">
-              <span className="hero-stat__value">{stat.value}</span>
-              <span className="hero-stat__label">{stat.label}</span>
-            </div>
-          ))}
-        </div>
-        <a href="#experience" className="hero-stats-note">
-          {copy.statsNote}
+      <div className="hero-actions">
+        <a href="#projects" className="button button-primary">
+          {copy.projects}
+          <span aria-hidden="true">↓</span>
         </a>
+        <a
+          href={links.cv}
+          className="button button-secondary"
+          target="_blank"
+          rel="noreferrer"
+          aria-label={copy.cvLabel}
+        >
+          {copy.cv}
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
 
-        <a href="#about" className="hero-cue mt-14" aria-label={copy.scrollLabel}>
-          <span>{copy.scrollLabel}</span>
-          <span aria-hidden="true" />
+      <div className="hero-foot">
+        <div className="hero-socials" aria-label={language === "es" ? "Perfiles profesionales" : "Professional profiles"}>
+          <a href={links.github} target="_blank" rel="noreferrer">
+            {copy.github} <span aria-hidden="true">↗</span>
+          </a>
+          <a href={links.linkedin} target="_blank" rel="noreferrer">
+            {copy.linkedin} <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <a href="#projects" className="scroll-cue">
+          <span>{copy.scroll}</span>
+          <i aria-hidden="true" />
         </a>
       </div>
     </section>

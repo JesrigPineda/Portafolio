@@ -1,4 +1,0 @@
-{"timestamp":"00:00:01.671","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:07.422","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit"}
-{"timestamp":"00:00:07.422","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {\"path\":\"/\",\"route\":\"/\"}"}
-{"timestamp":"00:00:07.422","source":"Browser","level":"LOG","message":"%c[Vercel Web Analytics]%c [view] http://localhost:3000/#projects color: rgb(120, 120, 120) color: inherit {\"dp\":\"/\",\"o\":\"http://localhost:3000/#projects\",\"sdkn\":\"@vercel/analytics/next\",\"sdkv\":\"2.0.1\",\"sv\":\"0.1.3\",\"ts\":1787002714969} /_vercel/insights/view"}

@@ -1,32 +1,27 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jesrig.dev"),
   title: {
-    default: "Jesrig Pineda | Software & Integration Engineer",
+    default: "Jesrig Pineda — Software Engineer | Integrations, Automation & Cloud",
     template: "%s | Jesrig Pineda",
   },
   description:
-    "Software and integration engineer focused on APIs, automation, cloud solutions and internal tools for scalable operations.",
+    "Software Engineer especializado en APIs, backend, integraciones, automatización y cloud para operaciones confiables y mantenibles.",
   applicationName: "Jesrig Pineda Portfolio",
-  authors: [{ name: "Jesrig Pineda", url: "https://x.com/JesrigPineda" }],
+  authors: [{ name: "Jesrig Pineda", url: "https://github.com/JesrigPineda" }],
   creator: "Jesrig Pineda",
   publisher: "Jesrig Pineda",
   keywords: [
     "Jesrig Pineda",
+    "Software Engineer",
     "Integration Engineer",
     "Automation Engineer",
-    "Software Engineer",
+    "Backend Engineer",
     "API integrations",
-    "Cloud workflows",
+    "Cloud automation",
     "Shopify integrations",
     "Firebase",
     "Node.js",
@@ -36,29 +31,29 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Jesrig Pineda | Software & Integration Engineer",
+    title: "Jesrig Pineda — Software Engineer | Integrations, Automation & Cloud",
     description:
-      "I build cloud integrations and automations across ecommerce, CRM, logistics, billing and reporting.",
+      "I build APIs, backend services, integrations and cloud automations that simplify complex operations.",
     url: "/",
     siteName: "Jesrig Pineda",
     locale: "es_MX",
     type: "website",
     images: [
       {
-        url: "/opengraph-image",
+        url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Jesrig Pineda - Software and Integration Engineer",
+        alt: "Jesrig Pineda — Software Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jesrig Pineda | Software & Integration Engineer",
+    title: "Jesrig Pineda — Software Engineer | Integrations, Automation & Cloud",
     description:
-      "Cloud integrations and automation for scalable operations.",
+      "APIs, backend services, integrations, automation and cloud.",
     creator: "@JesrigPineda",
-    images: ["/twitter-image"],
+    images: ["/og.png"],
   },
   robots: {
     index: true,
@@ -79,8 +74,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   colorScheme: "light dark",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f4f4f2" },
-    { media: "(prefers-color-scheme: dark)", color: "#111113" },
+    { media: "(prefers-color-scheme: light)", color: "#f5f5f3" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
   ],
 };
 
@@ -106,7 +101,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body>
         {children}
         <Analytics />
       </body>
