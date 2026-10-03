@@ -61,7 +61,7 @@ export function Projects() {
           const homeVisual = project.visual.home;
           if (!homeVisual) return null;
           return (
-            <article className={`selected-work selected-work-${slug}`} key={slug} aria-labelledby={`selected-${slug}`}>
+            <article className={`selected-work selected-work-${slug} motion-card`} key={slug} aria-labelledby={`selected-${slug}`}>
               <div className="selected-work-visual" role="img" aria-label={homeVisual.description[language]}>
                 <span className="selected-work-visual-index" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
                 <ProjectDiagram kind={homeVisual.kind} labels={homeVisual.labels[language]} />

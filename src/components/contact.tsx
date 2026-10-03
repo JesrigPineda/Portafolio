@@ -8,7 +8,7 @@ export function Contact() {
   const copy = siteContent[language].contact;
 
   return (
-    <section id="contact" className="section-shell contact-section" aria-labelledby="contact-title">
+    <section id="contact" className="section-shell contact-section motion-contact" aria-labelledby="contact-title">
       <p className="eyebrow">{copy.eyebrow}</p>
       <h2 id="contact-title">{copy.title}</h2>
       <p>{copy.copy}</p>

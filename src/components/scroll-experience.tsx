@@ -8,7 +8,7 @@ export function ScrollExperience() {
 
   useEffect(() => {
     const root = document.documentElement;
-    const sections = Array.from(document.querySelectorAll<HTMLElement>(".section-shell"));
+    const targets = Array.from(document.querySelectorAll<HTMLElement>(".motion-reveal, .motion-card, .motion-contact, .motion-flow"));
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     let frame = 0;
     let observer: IntersectionObserver | null = null;
@@ -30,17 +30,21 @@ export function ScrollExperience() {
       if (preference.matches) {
         root.classList.remove("motion-ready");
         root.style.removeProperty("--scroll-progress");
-        sections.forEach((section) => section.classList.add("section-visible"));
-      } else {
+      } else if ("IntersectionObserver" in window) {
+        const visible = targets.filter((target) => {
+          const bounds = target.getBoundingClientRect();
+          return bounds.bottom > 0 && bounds.top < window.innerHeight * 0.92;
+        });
+        visible.forEach((target) => target.classList.add("is-revealed"));
         observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add("section-visible");
+              entry.target.classList.add("is-revealed");
               observer?.unobserve(entry.target);
             }
           });
-        }, { rootMargin: "0px 0px -10%", threshold: 0.08 });
-        sections.forEach((section) => observer?.observe(section));
+        }, { rootMargin: "0px 0px -8% 0px", threshold: 0.01 });
+        targets.filter((target) => !target.classList.contains("is-revealed")).forEach((target) => observer?.observe(target));
         root.classList.add("motion-ready");
       }
       scheduleScroll();

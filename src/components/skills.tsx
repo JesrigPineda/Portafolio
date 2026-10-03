@@ -9,13 +9,13 @@ export function Skills() {
 
   return (
     <section id="about" className="section-shell about-section" aria-labelledby="about-title">
-      <div className="about-copy">
+      <div className="about-copy motion-reveal">
         <p className="eyebrow">{copy.eyebrow}</p>
         <h2 id="about-title" className="section-title">{copy.title}</h2>
         <p className="section-copy">{copy.copy}</p>
       </div>
 
-      <section className="stack-column" id="skills" aria-labelledby="stack-title">
+      <section className="stack-column motion-reveal" id="skills" aria-labelledby="stack-title">
         <h3 id="stack-title">{copy.stack}</h3>
         <dl className="stack-list">
           {skillGroups[language].map((group) => (

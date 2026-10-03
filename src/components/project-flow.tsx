@@ -13,7 +13,7 @@ export function ProjectFlow({ kind, steps, label }: Props) {
       ? `${steps.slice(0, 3).join(" → ")} → ${steps[3]} / ${steps[4]} → ${steps[5]}`
       : steps.join(" → ");
   return (
-    <div className={`project-flow project-flow--${kind}`} role="img" aria-label={`${label}: ${description}`}>
+    <div className={`project-flow project-flow--${kind} motion-flow`} role="img" aria-label={`${label}: ${description}`}>
       {kind === "commerce" && (
         <div className="flow-sequence" aria-hidden="true">
           {steps.map((step, index) => <Node key={step} text={step} emphasis={index === 2 || index === 3} />)}
