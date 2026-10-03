@@ -1,21 +1,30 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import jesrigAvatar from "@/img/Jesrig.jpg";
 import { navItems, siteContent } from "@/data/site";
 import { useLanguage } from "@/components/language-provider";
 
 export function Header() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [isOpen, setIsOpen] = useState(false);
   const [activeHash, setActiveHash] = useState("#home");
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const mobileNavRef = useRef<HTMLDivElement>(null);
   const { language, theme, toggleLanguage, toggleTheme } = useLanguage();
   const items = navItems[language];
   const copy = siteContent[language].header;
+  const homeHref = (href: string) => (href.startsWith("/") || isHome ? href : `/${href}`);
 
   useEffect(() => {
+    if (!isHome) return;
+
     const sections = ["#home", ...items.map((item) => item.href)]
-      .map((hash) => document.querySelector<HTMLElement>(hash))
+      .filter((hash) => hash.startsWith("#"))
+      .map((hash) => document.getElementById(hash.slice(1)))
       .filter((section): section is HTMLElement => Boolean(section));
 
     const observer = new IntersectionObserver(
@@ -33,18 +42,21 @@ export function Header() {
 
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
-  }, [items]);
+  }, [isHome, items]);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
+      if (event.key === "Escape" && isOpen) {
+        if (mobileNavRef.current?.contains(document.activeElement)) {
+          menuButtonRef.current?.focus();
+        }
         setIsOpen(false);
       }
     };
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, []);
+  }, [isOpen]);
 
   return (
     <>
@@ -54,7 +66,7 @@ export function Header() {
 
       <header className="site-header">
         <nav className="nav-shell" aria-label={language === "es" ? "Navegación principal" : "Main navigation"}>
-          <a href="#home" className="brand" aria-label={copy.home} onClick={() => setIsOpen(false)}>
+          <a href={homeHref("#home")} className="brand" aria-label={`${copy.home} — Jesrig Pineda`} onClick={() => setIsOpen(false)}>
             <Image
               src={jesrigAvatar}
               alt=""
@@ -69,9 +81,9 @@ export function Header() {
             {items.map((item) => (
               <a
                 key={item.href}
-                href={item.href}
-                className={activeHash === item.href ? "nav-link is-active" : "nav-link"}
-                aria-current={activeHash === item.href ? "location" : undefined}
+                href={homeHref(item.href)}
+                className={isHome && activeHash === item.href ? "nav-link is-active" : "nav-link"}
+                aria-current={isHome && activeHash === item.href ? "location" : undefined}
               >
                 {item.label}
               </a>
@@ -98,11 +110,13 @@ export function Header() {
             <button
               type="button"
               className="menu-button"
+              ref={menuButtonRef}
+              aria-label={isOpen ? copy.close : copy.menu}
               aria-expanded={isOpen}
               aria-controls="mobile-navigation"
               onClick={() => setIsOpen((current) => !current)}
             >
-              <span>{isOpen ? copy.close : copy.menu}</span>
+              <span aria-hidden="true">{isOpen ? copy.close : copy.menu}</span>
               <span className={isOpen ? "menu-icon is-open" : "menu-icon"} aria-hidden="true">
                 <i />
                 <i />
@@ -111,14 +125,19 @@ export function Header() {
           </div>
         </nav>
 
-        <div id="mobile-navigation" className={isOpen ? "mobile-nav is-open" : "mobile-nav"}>
+        <div
+          id="mobile-navigation"
+          ref={mobileNavRef}
+          className={isOpen ? "mobile-nav is-open" : "mobile-nav"}
+          inert={!isOpen}
+        >
           <div className="mobile-nav-inner">
             {items.map((item) => (
               <a
                 key={item.href}
-                href={item.href}
-                className={activeHash === item.href ? "mobile-nav-link is-active" : "mobile-nav-link"}
-                aria-current={activeHash === item.href ? "location" : undefined}
+                href={homeHref(item.href)}
+                className={isHome && activeHash === item.href ? "mobile-nav-link is-active" : "mobile-nav-link"}
+                aria-current={isHome && activeHash === item.href ? "location" : undefined}
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}

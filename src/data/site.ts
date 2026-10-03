@@ -1,28 +1,17 @@
 export type Language = "es" | "en";
 
-export type Project = {
-  title: string;
-  summary: string;
-  solution: string;
-  stack: string[];
-  githubUrl: string;
-  demoUrl?: string;
-  impact?: string;
-  architecture?: string[];
-  status?: "public" | "poc" | "completed";
-};
-
 export type Experience = {
   role: string;
   company: string;
   period: string;
+  homeSummary: string;
+  homeHighlights?: string[];
   highlights: string[];
 };
 
 export const links = {
   github: "https://github.com/JesrigPineda",
   linkedin: "https://www.linkedin.com/in/jesrigpineda",
-  cv: "https://www.linkedin.com/in/jesrigpineda",
 };
 
 export const navItems = {
@@ -51,23 +40,18 @@ export const siteContent = {
       themeDark: "Activar modo oscuro",
     },
     hero: {
-      role: "Software Engineer",
-      specialization: "Integrations · Automation · Cloud",
-      headline: "Construyo software que conecta sistemas y simplifica operaciones.",
+      role: "Jesrig Pineda · Software Engineer",
+      headline: "Construyo software que conecta sistemas.",
       subheadline:
-        "Diseño APIs, servicios backend, integraciones y automatizaciones cloud que convierten procesos complejos en flujos confiables y mantenibles.",
+        "Desarrollo sistemas backend, integraciones y automatizaciones con servicios cloud para conectar software, datos y operaciones.",
       projects: "Ver proyectos",
-      cv: "CV",
-      cvLabel: "Ver experiencia profesional en LinkedIn",
-      github: "GitHub",
       linkedin: "LinkedIn",
-      scroll: "Selected work",
     },
     projects: {
       eyebrow: "Selected work",
       title: "Software aplicado a problemas reales.",
-      description:
-        "Una selección de sistemas backend, integraciones y productos técnicos construidos con foco en claridad, confiabilidad y utilidad.",
+      description: "Una selección de proyectos de backend, integraciones y automatización.",
+      viewProject: "Ver proyecto",
       solution: "Mi trabajo",
       architecture: "Arquitectura",
       stack: "Stack",
@@ -83,28 +67,22 @@ export const siteContent = {
     experience: {
       eyebrow: "Experiencia",
       title: "Ingeniería cerca de la operación.",
-      description:
-        "He trabajado desde el código hasta la dirección técnica, conectando software, datos y procesos de negocio.",
+      description: "Una trayectoria en desarrollo, integraciones y operación tecnológica.",
     },
     about: {
-      eyebrow: "Stack / Sobre mí",
-      title: "Backend primero. Producto siempre.",
+      eyebrow: "Sobre mí",
+      title: "Software Engineer enfocado en integraciones y automatización.",
       copy:
-        "Soy Software Engineer con experiencia construyendo integraciones, automatizaciones y servicios cloud para operaciones reales. Me gusta entender el proceso completo, definir límites claros y dejar sistemas que otros equipos puedan operar y mantener.",
-      principles: [
-        "Contratos claros",
-        "Fallos visibles",
-        "Trazabilidad útil",
-        "Complejidad justificada",
-      ],
+        "Combino desarrollo backend y servicios cloud con conocimiento de procesos operativos en ecommerce. He conectado sistemas mediante APIs y webhooks para hacer los flujos más claros y mantenibles.",
+      stack: "Tecnologías",
     },
     contact: {
       eyebrow: "Contacto",
       title: "¿Construimos algo que conecte mejor?",
       copy:
-        "Estoy disponible para conversar sobre oportunidades de Software Engineering, backend, integraciones, automatización y cloud.",
+        "Estoy abierto a oportunidades de Software Engineering donde backend e integraciones apoyen operaciones reales.",
       linkedin: "Hablemos en LinkedIn",
-      github: "Explorar GitHub",
+      github: "Ver GitHub",
     },
     footer: "Software Engineer · Integrations · Automation · Cloud",
   },
@@ -118,23 +96,18 @@ export const siteContent = {
       themeDark: "Activate dark mode",
     },
     hero: {
-      role: "Software Engineer",
-      specialization: "Integrations · Automation · Cloud",
-      headline: "I build software that connects systems and simplifies operations.",
+      role: "Jesrig Pineda · Software Engineer",
+      headline: "I build software that connects systems.",
       subheadline:
-        "I design APIs, backend services, integrations and cloud automations that turn complex processes into reliable, maintainable workflows.",
-      projects: "View projects",
-      cv: "Resume",
-      cvLabel: "View professional experience on LinkedIn",
-      github: "GitHub",
+        "I build backend systems, integrations and automations with cloud services to connect software, data and operations.",
+      projects: "View my work",
       linkedin: "LinkedIn",
-      scroll: "Selected work",
     },
     projects: {
       eyebrow: "Selected work",
       title: "Software applied to real problems.",
-      description:
-        "A selection of backend systems, integrations and technical products built around clarity, reliability and utility.",
+      description: "Selected projects in backend, integrations and automation.",
+      viewProject: "View project",
       solution: "My work",
       architecture: "Architecture",
       stack: "Stack",
@@ -150,129 +123,26 @@ export const siteContent = {
     experience: {
       eyebrow: "Experience",
       title: "Engineering close to operations.",
-      description:
-        "I have worked from code to technical leadership, connecting software, data and business processes.",
+      description: "A trajectory in development, integrations and technology operations.",
     },
     about: {
-      eyebrow: "Stack / About",
-      title: "Backend first. Product always.",
+      eyebrow: "About",
+      title: "Software Engineer focused on integrations and automation.",
       copy:
-        "I am a Software Engineer experienced in building integrations, automations and cloud services for real operations. I like to understand the complete process, define clear boundaries and leave systems that other teams can operate and maintain.",
-      principles: [
-        "Clear contracts",
-        "Visible failures",
-        "Useful traceability",
-        "Justified complexity",
-      ],
+        "I combine backend development and cloud services with an understanding of ecommerce operations. I have connected systems through APIs and webhooks to make workflows clearer and easier to maintain.",
+      stack: "Technology",
     },
     contact: {
       eyebrow: "Contact",
       title: "Let’s build something that connects better.",
       copy:
-        "I am open to conversations about Software Engineering, backend, integrations, automation and cloud opportunities.",
+        "I am open to Software Engineering opportunities where backend and integrations support real operations.",
       linkedin: "Let’s talk on LinkedIn",
-      github: "Explore GitHub",
+      github: "View GitHub",
     },
     footer: "Software Engineer · Integrations · Automation · Cloud",
   },
 } satisfies Record<Language, unknown>;
-
-export const projects = {
-  es: [
-    {
-      title: "Commerce Ops Webhook Bridge",
-      summary:
-        "Convierte eventos crudos de Shopify en órdenes internas seguras, consistentes y trazables.",
-      solution:
-        "Construí el servicio end-to-end: verificación HMAC, validación con Zod, mapeo a SalesOrder, reglas de negocio, idempotencia y persistencia intercambiable en archivo o Firestore.",
-      stack: ["Node.js", "TypeScript", "Express", "Zod", "Firestore", "Vitest"],
-      githubUrl: "https://github.com/JesrigPineda/commerce-ops-webhook-bridge",
-      architecture: ["Shopify Webhook", "HMAC + Zod", "Business Rules", "Firestore"],
-      status: "public",
-    },
-    {
-      title: "Serverless Ops Health Monitor",
-      summary:
-        "Detecta fallos silenciosos en endpoints críticos y los convierte en incidentes con contexto.",
-      solution:
-        "Diseñé funciones HTTP, programadas y orientadas a eventos; cada ejecución persiste evidencia, clasifica fallos y mantiene logs estructurados con correlation IDs.",
-      stack: ["TypeScript", "Cloud Functions", "Firestore", "Cloud Scheduler", "Zod", "Vitest"],
-      githubUrl: "https://github.com/JesrigPineda/serverless-ops-health-monitor",
-      architecture: ["Scheduler", "Cloud Function", "Check", "Incident", "Firestore"],
-      status: "public",
-    },
-    {
-      title: "Origina Lead Agent",
-      summary:
-        "Califica y da seguimiento a leads financieros desde chat y voz simulada, con memoria y handoff humano.",
-      solution:
-        "Construí la API, el orquestador conversacional, herramientas internas, persistencia y trazabilidad. LangChain coordina el modelo y las tools; la aplicación conserva las reglas de negocio.",
-      stack: ["Node.js", "TypeScript", "Fastify", "LangChain JS", "Ollama", "SQLite"],
-      githubUrl: "https://github.com/JesrigPineda/origina-lead-agent",
-      architecture: ["WhatsApp / Voice", "Fastify", "LangChain Agent", "CRM + Handoff", "SQLite"],
-      status: "public",
-    },
-    {
-      title: "Nerd.IA Developer Docs PoC",
-      summary:
-        "Transforma fuentes públicas dispersas de una API en una ruta de integración bilingüe, clara y verificable.",
-      solution:
-        "Diseñé la arquitectura de contenido, quickstart y ejemplos; documenté cuatro operaciones con OpenAPI 3.1 y añadí referencia interactiva sin asumir información ausente.",
-      stack: ["Astro", "Starlight", "MDX", "Scalar", "OpenAPI 3.1"],
-      githubUrl: "https://github.com/JesrigPineda/Nerd.IA-Docs-PoC",
-      demoUrl: "https://nerd-ia-docs-po-c.vercel.app",
-      architecture: ["API Sources", "OpenAPI 3.1", "MDX", "Starlight + Scalar", "Static Site"],
-      status: "poc",
-    },
-  ],
-  en: [
-    {
-      title: "Commerce Ops Webhook Bridge",
-      summary:
-        "Turns raw Shopify events into safe, consistent and traceable internal orders.",
-      solution:
-        "I built the service end to end: HMAC verification, Zod validation, SalesOrder mapping, business rules, idempotency and interchangeable file or Firestore persistence.",
-      stack: ["Node.js", "TypeScript", "Express", "Zod", "Firestore", "Vitest"],
-      githubUrl: "https://github.com/JesrigPineda/commerce-ops-webhook-bridge",
-      architecture: ["Shopify Webhook", "HMAC + Zod", "Business Rules", "Firestore"],
-      status: "public",
-    },
-    {
-      title: "Serverless Ops Health Monitor",
-      summary:
-        "Detects silent failures in critical endpoints and turns them into incidents with context.",
-      solution:
-        "I designed HTTP, scheduled and event-driven functions; every run persists evidence, classifies failures and maintains structured logs with correlation IDs.",
-      stack: ["TypeScript", "Cloud Functions", "Firestore", "Cloud Scheduler", "Zod", "Vitest"],
-      githubUrl: "https://github.com/JesrigPineda/serverless-ops-health-monitor",
-      architecture: ["Scheduler", "Cloud Function", "Check", "Incident", "Firestore"],
-      status: "public",
-    },
-    {
-      title: "Origina Lead Agent",
-      summary:
-        "Qualifies and follows up with financial leads through chat and simulated voice, with memory and human handoff.",
-      solution:
-        "I built the API, conversation orchestrator, internal tools, persistence and traceability. LangChain coordinates the model and tools while the application owns business rules.",
-      stack: ["Node.js", "TypeScript", "Fastify", "LangChain JS", "Ollama", "SQLite"],
-      githubUrl: "https://github.com/JesrigPineda/origina-lead-agent",
-      architecture: ["WhatsApp / Voice", "Fastify", "LangChain Agent", "CRM + Handoff", "SQLite"],
-      status: "public",
-    },
-    {
-      title: "Nerd.IA Developer Docs PoC",
-      summary:
-        "Turns scattered public API sources into a clear, verifiable bilingual integration path.",
-      solution:
-        "I designed the content architecture, quickstart and examples; documented four operations with OpenAPI 3.1 and added an interactive reference without assuming missing information.",
-      stack: ["Astro", "Starlight", "MDX", "Scalar", "OpenAPI 3.1"],
-      githubUrl: "https://github.com/JesrigPineda/Nerd.IA-Docs-PoC",
-      demoUrl: "https://nerd-ia-docs-po-c.vercel.app",
-      architecture: ["API Sources", "OpenAPI 3.1", "MDX", "Starlight + Scalar", "Static Site"],
-      status: "poc",
-    },
-  ],
-} satisfies Record<Language, Project[]>;
 
 export const experience = {
   es: [
@@ -280,6 +150,11 @@ export const experience = {
       role: "IT Manager",
       company: "Alxedo",
       period: "ene. 2025 — ago. 2026",
+      homeSummary: "Integraciones y automatización para ecommerce y operación tecnológica.",
+      homeHighlights: [
+        "Diseñé e implementé integraciones entre Shopify, CRM, logística y facturación mediante APIs, Cloud Functions y herramientas de automatización.",
+        "Apoyé aproximadamente 4–5 flujos críticos de operación; estas automatizaciones redujeron aproximadamente 8–10 horas semanales de trabajo manual.",
+      ],
       highlights: [
         "Dirigí integraciones y automatizaciones entre ecommerce, CRM, logística, facturación y reporting.",
         "Automaticé 4–5 flujos críticos, reduciendo aproximadamente 8–10 horas semanales de trabajo manual.",
@@ -290,6 +165,11 @@ export const experience = {
       role: "Software Engineer",
       company: "Alxedo",
       period: "mar. 2022 — ene. 2025",
+      homeSummary: "Backend, integraciones y servicios serverless para sistemas internos.",
+      homeHighlights: [
+        "Desarrollé e integré 10+ endpoints mediante APIs REST y webhooks.",
+        "Las mejoras implementadas contribuyeron a una reducción de aproximadamente 18–25% en costos de infraestructura cloud.",
+      ],
       highlights: [
         "Diseñé e integré más de 10 endpoints mediante APIs REST y webhooks.",
         "Construí servicios serverless y herramientas internas para conectar Shopify, CRM y procesos operativos.",
@@ -300,6 +180,7 @@ export const experience = {
       role: "Software Developer Intern",
       company: "Alxedo",
       period: "sept. 2021 — feb. 2022",
+      homeSummary: "Apoyé tareas de desarrollo de software y APIs para necesidades internas.",
       highlights: [
         "Colaboré en el desarrollo de software y APIs para necesidades internas del negocio.",
       ],
@@ -308,6 +189,7 @@ export const experience = {
       role: "Web Developer",
       company: "Freelance",
       period: "ene. 2021 — dic. 2021",
+      homeSummary: "Desarrollé proyectos web para clientes independientes e integré APIs.",
       highlights: [
         "Entregué proyectos web para clientes e integré servicios externos sobre sistemas existentes.",
       ],
@@ -318,6 +200,11 @@ export const experience = {
       role: "IT Manager",
       company: "Alxedo",
       period: "Jan. 2025 — Aug. 2026",
+      homeSummary: "Integrations and automation for ecommerce and technology operations.",
+      homeHighlights: [
+        "Designed and implemented integrations between Shopify, CRM, logistics and billing systems using APIs, Cloud Functions and automation tools.",
+        "Supported approximately 4–5 critical operational workflows; these automations reduced approximately 8–10 hours of manual work per week.",
+      ],
       highlights: [
         "Led integrations and automations across ecommerce, CRM, logistics, billing and reporting.",
         "Automated 4–5 critical workflows, saving approximately 8–10 hours of manual work per week.",
@@ -328,6 +215,11 @@ export const experience = {
       role: "Software Engineer",
       company: "Alxedo",
       period: "Mar. 2022 — Jan. 2025",
+      homeSummary: "Backend, integrations and serverless services for internal systems.",
+      homeHighlights: [
+        "Developed and integrated 10+ endpoints using REST APIs and webhooks.",
+        "The implemented improvements contributed to a reduction of approximately 18–25% in cloud infrastructure costs.",
+      ],
       highlights: [
         "Designed and integrated more than 10 endpoints through REST APIs and webhooks.",
         "Built serverless services and internal tools connecting Shopify, CRM and operational processes.",
@@ -338,6 +230,7 @@ export const experience = {
       role: "Software Developer Intern",
       company: "Alxedo",
       period: "Sep. 2021 — Feb. 2022",
+      homeSummary: "Supported software development and API-related tasks for internal needs.",
       highlights: [
         "Contributed to software and API development for internal business needs.",
       ],
@@ -346,6 +239,7 @@ export const experience = {
       role: "Web Developer",
       company: "Freelance",
       period: "Jan. 2021 — Dec. 2021",
+      homeSummary: "Developed web projects for independent clients and integrated APIs.",
       highlights: [
         "Delivered client web projects and integrated external services into existing systems.",
       ],
@@ -355,17 +249,17 @@ export const experience = {
 
 export const skillGroups = {
   es: [
-    { title: "Backend", items: ["Node.js", "TypeScript", "JavaScript", "Python"] },
-    { title: "Integrations", items: ["REST APIs", "Webhooks", "Shopify", "Kommo CRM"] },
-    { title: "Cloud", items: ["Google Cloud", "Firebase", "Firestore", "Cloud Functions"] },
-    { title: "Automation / Delivery", items: ["Zapier", "GitHub Actions"] },
-    { title: "AI", items: ["LangChain JS", "Ollama", "Structured outputs", "Tool calling"] },
+    { title: "Backend", items: ["Node.js", "JavaScript", "Python"] },
+    { title: "Integración", items: ["REST APIs", "Webhooks"] },
+    { title: "Cloud", items: ["Google Cloud", "Cloud Functions", "Firebase", "AWS"] },
+    { title: "Datos", items: ["PostgreSQL", "SQL", "Firestore"] },
+    { title: "Automatización", items: ["Zapier"] },
   ],
   en: [
-    { title: "Backend", items: ["Node.js", "TypeScript", "JavaScript", "Python"] },
-    { title: "Integrations", items: ["REST APIs", "Webhooks", "Shopify", "Kommo CRM"] },
-    { title: "Cloud", items: ["Google Cloud", "Firebase", "Firestore", "Cloud Functions"] },
-    { title: "Automation / Delivery", items: ["Zapier", "GitHub Actions"] },
-    { title: "AI", items: ["LangChain JS", "Ollama", "Structured outputs", "Tool calling"] },
+    { title: "Backend", items: ["Node.js", "JavaScript", "Python"] },
+    { title: "Integration", items: ["REST APIs", "Webhooks"] },
+    { title: "Cloud", items: ["Google Cloud", "Cloud Functions", "Firebase", "AWS"] },
+    { title: "Data", items: ["PostgreSQL", "SQL", "Firestore"] },
+    { title: "Automation", items: ["Zapier"] },
   ],
 } satisfies Record<Language, { title: string; items: string[] }[]>;

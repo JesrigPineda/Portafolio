@@ -1,26 +1,31 @@
+import type { Metadata } from "next";
 import { Contact } from "@/components/contact";
 import { Experience } from "@/components/experience";
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
-import { LanguageProvider } from "@/components/language-provider";
 import { Projects } from "@/components/projects";
-import { ScrollExperience } from "@/components/scroll-experience";
 import { Skills } from "@/components/skills";
+import { JsonLd } from "@/components/json-ld";
+import { links } from "@/data/site";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "https://jesrig.dev/" },
+};
 
 export default function Home() {
   return (
-    <LanguageProvider>
-      <ScrollExperience />
-      <Header />
-      <main id="content" className="page-shell">
-        <Hero />
-        <Projects />
-        <Experience />
-        <Skills />
-        <Contact />
-        <Footer />
-      </main>
-    </LanguageProvider>
+    <main id="content" tabIndex={-1} className="page-shell">
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@graph": [
+          { "@type": "Person", "@id": "https://jesrig.dev/#person", name: "Jesrig Pineda", url: "https://jesrig.dev/", jobTitle: "Software Engineer", sameAs: [links.linkedin, links.github] },
+          { "@type": "WebSite", "@id": "https://jesrig.dev/#website", name: "Jesrig Pineda — Portfolio", url: "https://jesrig.dev/", author: { "@id": "https://jesrig.dev/#person" } },
+        ],
+      }} />
+      <Hero />
+      <Projects />
+      <Experience />
+      <Skills />
+      <Contact />
+    </main>
   );
 }

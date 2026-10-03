@@ -1,11 +1,15 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
+import { LanguageProvider } from "@/components/language-provider";
+import { ScrollExperience } from "@/components/scroll-experience";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jesrig.dev"),
   title: {
-    default: "Jesrig Pineda — Software Engineer | Integrations, Automation & Cloud",
+    default: "Jesrig Pineda — Software Engineer | Backend e integraciones",
     template: "%s | Jesrig Pineda",
   },
   description:
@@ -27,20 +31,17 @@ export const metadata: Metadata = {
     "Node.js",
     "TypeScript",
   ],
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
-    title: "Jesrig Pineda — Software Engineer | Integrations, Automation & Cloud",
+    title: "Jesrig Pineda — Software Engineer | Backend e integraciones",
     description:
-      "I build APIs, backend services, integrations and cloud automations that simplify complex operations.",
-    url: "/",
+      "Software Engineer especializado en backend, integraciones, automatización y servicios cloud.",
+    url: "https://jesrig.dev/",
     siteName: "Jesrig Pineda",
     locale: "es_MX",
     type: "website",
     images: [
       {
-        url: "/og.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Jesrig Pineda — Software Engineer",
@@ -49,11 +50,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jesrig Pineda — Software Engineer | Integrations, Automation & Cloud",
+    title: "Jesrig Pineda — Software Engineer | Backend e integraciones",
     description:
-      "APIs, backend services, integrations, automation and cloud.",
-    creator: "@JesrigPineda",
-    images: ["/og.png"],
+      "Software Engineer especializado en backend, integraciones, automatización y servicios cloud.",
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
@@ -102,7 +102,14 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {children}
+        <LanguageProvider>
+          <ScrollExperience />
+          <Header />
+          {children}
+          <div className="page-shell">
+            <Footer />
+          </div>
+        </LanguageProvider>
         <Analytics />
       </body>
     </html>
